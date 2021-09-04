@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC>
+<html class="supernova">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="#">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+  <meta name="HandheldFriendly" content="true" />
+  <title>Heart Disease Predictor</title>
+  <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+  <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f30e2a790832f3e96009402"/>
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="static/heartdisease.css" />
+  <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+  <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+</head>
+
+<body>
+<form class="jotform-form" action="{{ url_for('heartdisease')}}" method="POST">
+  <div role="main" class="form-all">
+    <style>
+      .form-all:before { background: none;}
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_14" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 class="form-header" data-component="header">
+              Heart Disease Predictor
+            </h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email">
+        <label for="first" class="form-label form-label-top form-label-auto">
+          Age
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="first" name="age" type="number" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown">
+        <label for="second" class="form-label form-label-top form-label-auto" name = 'sex' style="font-weight: bold" required> Gender </label>
+        <div class="form-input-wide" data-layout="half">
+          <select class="form-dropdown" style="width:310px" data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="0"> Female </option>
+            <option value="1"> Male </option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_spinner">
+        <label for="third" class="form-label form-label-top form-label-auto" for="third">
+          Chest Pain Type
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'cp' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required allowTime" data-type="control_datetime">
+        <label for="fourth" class="form-label form-label-top form-label-auto">
+          Resting Blood Pressure (in mm Hg) 
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="fourth" name="trestbps" type="number" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate" id="id_20">
+        <label for="fifth" class="form-label form-label-top form-label-auto" id="label_20" for="input_20">
+          Resting Electrocardiographic Results
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'restecg' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="sixth" class="form-label form-label-top form-label-auto">
+          MaxHeartRate (maximum heart rate achieved eg. 156, 173, 187,...)
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="sixth" name="thalach" type="number" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="seventh" class="form-label form-label-top form-label-auto">
+          Exercise Induced Angina (0 = No; 1 = Yes)
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'exang' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="eighth" class="form-label form-label-top form-label-auto">
+          STdepression (ST depression induced by exercise relative to <br> rest eg. 0.8, 1.4, 3.5,...) 
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="eighth" name="oldpeak" type="number" step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="ninth" class="form-label form-label-top form-label-auto">
+          Slope of the peak exercise ST segment
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'slope' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="tenth" class="form-label form-label-top form-label-auto">
+          Number of major vessels
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'ca' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="eleventh" class="form-label form-label-top form-label-auto">
+          Thalassemia (1=Normal; 2=Fixed Defect; 3=Reversable)
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <select class="form-dropdown" style="width:310px" name = 'thal' data-component="dropdown">
+            <option value=""> Please Select </option>
+            <option value="1">Normal</option>
+            <option value="2">Fixed Defect</option>
+            <option value="3">Reversable</option>
+          </select>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button">
+        <div class="form-input-wide">
+          <div data-align="center" class="form-buttons-wrapper form-buttons-center">
+            <button id="sub" type="submit" class="form-submit-button submit-button jf-form-buttons">
+              Submit
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="formFooter-heightMask">
+  </div>
+</form></body>
+</html>

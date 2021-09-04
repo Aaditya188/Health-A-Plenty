@@ -1,0 +1,264 @@
+// Main Slider Height
+.slider-height {
+    height: 920px;
+    @media #{$lg}{
+        height: 700px;
+    }
+    @media #{$md}{
+        height: 650px;
+    }
+    @media #{$sm}{
+        height: 600px;
+    }
+    @media #{$xs}{
+        height: 600px;
+    }
+}
+// Another Page
+.slider-height2{
+    height: 540px;
+    background-size: cover;
+    @media #{$md}{
+        height: 350px;
+    }
+    @media #{$sm}{
+        height: 260px;
+    }
+    @media #{$xs}{
+        height: 260px;
+    }
+}
+// Slider Area Main
+.slider-area{
+    position: relative;
+    background-image: url(../img/hero/h1_hero.png);
+    background-repeat:no-repeat ;
+    background-position: center center;
+    background-size: cover;
+    .hero-wrapper {
+        @media #{$sm}{
+            margin-top: -50px;
+        }
+        @media #{$xs}{
+            margin-top: -20px;
+        }
+    }
+    .hero__caption{
+       overflow: hidden;
+        @media #{$large1}{
+            margin-left: 50px;
+        }
+        @media #{$lg}{
+            margin-left: 50px;
+        }
+        @media #{$md}{
+            margin-left: 50px;
+        }
+        @media #{$xs}{
+            margin-top: 17px;
+        }
+        position: relative;
+         span{
+            display: inline-block;
+            font-size: 18px;
+            color: #222222;
+            text-transform: normal;
+            margin-bottom: 20px;
+        }
+         h1{
+            font-size: 70px;
+            font-weight: 300;
+            color: #0D210B;
+            line-height: 1.2;
+            margin-bottom: 23px;
+            overflow: hidden;
+            @media #{$large1}{
+                font-size: 60px;
+            }
+            @media #{$lg}{
+                font-size: 55px;
+                line-height: 1.2;
+            }
+            @media #{$md}{
+                font-size: 50px;
+                line-height: 1.2;
+            }
+            @media #{$sm}{
+                font-size: 29px;
+            }
+            @media #{$xs}{
+                font-size: 33px;
+                line-height: 1.4;
+            }
+        }
+         p{
+            margin-bottom: 30px;
+            color: $font-color1;
+            overflow: hidden;
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 1.5;
+           @media #{$md}{
+                padding-right: 0px;
+            }
+           @media #{$xs}{
+                padding-right: 0px;
+                font-size: 18px;
+            }
+        }
+    }
+    // Dot Style
+    .dot-style{
+        .slick-dots {
+            text-align: left;
+            bottom: 0;
+            position: absolute;
+            top: 63%;
+            left: 7%;
+            @media #{$laptop}{
+                left: 3%;
+            }
+            @media #{$lg}{
+                left: 3%;
+            }
+            li {
+                display: block;
+            }
+            .slick-active button {
+                background: #222;
+                height: 34px;
+                width: 3px;
+            }
+            button {
+                text-indent: -100000px;
+                height: 20px;
+                width: 3px;
+                border: 0;
+                padding: 0;
+                margin-right: 10px;
+                cursor: pointer;
+                border-radius: 0;
+                margin-bottom: 7px;
+                background: #a3a3a3;
+            }
+        }
+    }
+    // ! Video icon 
+.video-icon{
+    margin-bottom: 50px;
+    @media #{$xs}{
+        right: 27px;
+        bottom: 27px;
+    }
+    @media #{$large1}{
+        padding-left: 50px;
+    }
+    @media #{$lg}{
+        padding-left: 50px;
+    }
+    @media #{$md}{
+        padding-left: 50px;
+    }
+    a{
+         background:$theme-color;
+         width: 60px;
+         height: 60px;
+         display: inline-block;
+         text-align: center;
+         line-height: 60px;
+         border-radius: 50%;
+         i{
+            color: #fff;
+            color: #fff;
+            font-size: 16px;
+            position: relative;
+            top: 4px;
+         }
+         
+         @media #{$sm}{
+            width: 50px; 
+            height: 50px; 
+            line-height: 50px;
+        }
+         @media #{$xs}{
+            width: 50px;
+            height: 50px; 
+            line-height: 50px;
+        }
+    } 
+    // btn Animated Style
+    a.btn-icon{
+        position: relative;
+      &::before{
+
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        bottom: -2px;
+        right: -2px;
+        border-radius: inherit;
+        border: 1px solid $theme-color;
+        -webkit-animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
+        animation: btnIconRipple 2s cubic-bezier(0.23, 1, 0.32, 1) both infinite;
+      }
+      /* Animations */
+        @-webkit-keyframes btnIconRipple { 
+            0% { border-width: 4px;
+                -webkit-transform: scale(1);
+                transform: scale(1); }
+            50% { 
+                border-width: 1px;
+                -webkit-transform: scale(1.50);
+                transform: scale(1.50); 
+                }
+            80% { 
+                border-width: 1px;
+                -webkit-transform: scale(1.90);
+                transform: scale(1.90); 
+                }
+            100% { 
+                opacity: 0; }
+            }
+        /* End Animated */
+        &:hover{
+            // background: #c6a16e;
+            background: #33792a;
+            color: #fff;
+        }
+    }
+ }
+
+}
+// Another Hero Page
+.slider-area2{
+    background-image: url(../img/hero/hero2.png);
+    background-repeat:no-repeat ;
+    background-position: center center;
+    background-size: cover;
+    .hero-cap{
+        @media #{$md}{
+            padding-top: 50px;
+        }
+        @media #{$sm}{
+            padding-top: 50px;
+        }
+        @media #{$xs}{
+            padding-top: 50px;
+        }
+        h2{
+            color: #111111;
+            font-size: 50px;
+            font-weight: 900;
+            text-transform: capitalize;
+            @media #{$sm}{
+                font-size: 38px;
+            }
+            @media #{$xs}{
+                font-size: 36px;
+            }
+        }
+    }
+}
+

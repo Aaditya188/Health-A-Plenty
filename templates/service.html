@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Health-A-Plenty | Services</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/assets/css/slicknav.css">
+    <link rel="stylesheet" href="static/assets/css/flaticon.css">
+    <link rel="stylesheet" href="static/assets/css/gijgo.css">
+    <link rel="stylesheet" href="static/assets/css/animate.min.css">
+    <link rel="stylesheet" href="static/assets/css/animated-headline.css">
+    <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="static/assets/css/slick.css">
+    <link rel="stylesheet" href="static/assets/css/nice-select.css">
+    <link rel="stylesheet" href="static/assets/css/style.css">
+</head>
+<script src="//code.tidio.co/nioqkei40pag42eontipwcv0v5zkavgk.js" async></script>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="static/assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!--? Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-2 col-lg-2 col-md-1">
+                            <div class="logo">
+                                <a href="{{ url_for('home')}}"><img src="static/assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">
+                                            <li><a href="{{ url_for('home')}}">Home</a></li>
+                                            <li><a href="{{ url_for('about')}}">About-Us</a></li>
+                                            <li><a style="cursor:pointer;"> Services</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{ url_for('service')}}">Diagnosis</a></li><br>
+                                                    <li><a href="{{ url_for('corona')}}">Covid Tracker</a></li><br>
+                                                    <li><a href="https://nearbyhospital.herokuapp.com/map">Nearby Hospital</a></li><br>
+                                                    <li><a href="https://nearbyhospital.herokuapp.com/">Nearby Pharmacies</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="{{ url_for('firstaid')}}">First-Aid</a></li>
+                                            <li><a href="{{ url_for('contact')}}">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block ml-15">
+                                    <a href="{{ url_for('appointmentform')}}" class="btn header-btn">Make an Appointment</a>
+                                </div>
+                            </div>
+                        </div>    
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? Slider Area Start-->
+        <div class="slider-area slider-area2">
+            <div class="slider-active dot-style">
+                <!-- Slider Single -->
+                <div class="single-slider  d-flex align-items-center slider-height2">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-8 col-md-10 ">
+                             <div class="hero-wrapper">
+                                <div class="hero__caption">
+                                    <h1 data-animation="fadeInUp" data-delay=".3s">Services</h1>
+                                    <p data-animation="fadeInUp" data-delay=".6s">Be at ease without disease.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <!-- Slider Area End -->
+    <section class="wantToWork-area">
+        <div class="container">
+            <div class="wants-wrapper w-padding2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-7 col-lg-9 col-md-8">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <h2>Health Diagnostics <br>Section</h2>
+                            <p>Health is precious – Protect it 
+Check your health status the fastest way possible</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--? Services Area Start -->
+<div class="service-area" id="diagnose">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/services1.svg" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h2 style="color:white">Heart Disease</h2>
+                        <p>Check if your heart is keeping up with the beats.</p>
+                        <a href="{{ url_for('heartdisease')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/liver.svg" width="110px" height="110px" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h2 style="color:white">Liver Disease</h2>
+                        <p>Check if your liver health is making you a long-liver.</p>
+                        <a href="{{ url_for('liverdisease')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/machar.svg" width="110px" height="110px" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h3 style="color:white">malaria</h3>
+                        <p>Diagnose to check for symptoms of malaria.</p>
+                        <a href="{{ url_for('malariadisease')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" >
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/lungs.svg" width="110px" height="110px" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h2 style="color:white">Pneumonia</h2>
+                        <p>Diagnose symptoms of pneumonia.</p>
+                        <a href="{{ url_for('pneumoniadisease')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" style="allign-right: 70px">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/breast.svg"  width="110px" height="110px" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h2 style="color:white">Breast Cancer</h2>
+                        <p>Diagnose for Breast cancer(female).</p>
+                        <a href="{{ url_for('breastcancer')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6" style="allign-right: 70px">
+                <div class="single-cat text-center mb-50">
+                    <div class="cat-icon">
+                        <img src="static/assets/img/icon/diabetes.svg"  width="110px" height="110px" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h2 style="color:white">Diabetes</h2>
+                        <p>Diagnose for Diabetes</p>
+                        <a href="{{ url_for('diabetes')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
+<section id="covid">
+  <div class="container" style="display: flex; justify-content: center; align-items: center; padding-top: 40px; padding-bottom: 40px;">
+        <div class="wants-wrapper w-padding2">
+        <div class="row">
+            <div class="col-xl-7 col-lg-9 col-md-8">
+                <div class="wantToWork-caption wantToWork-caption2" style="justify-content: center; align-items: center; text-align: center; vertical-align: middle; horizontal-align: middle;">
+                    <h1>Check your COVID Symptoms</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+          <a href="{{ url_for('corona')}}" class="genric-btn danger-border circle arrow" style="font-size :18px; font-weight: 700">Covid Check</a>
+    </div>
+  </div>
+</section>
+<!-- Services Area End --> 
+    <!--? video_start -->
+    <div class="container pt-40">
+        <div class="video-area section-bg2 d-flex align-items-center"  data-background="static/assets/img/gallery/video-bg.png" style="display: block;margin-left: auto;margin-right: auto; width: 85%;border-radius: 50px; margin-bottom: 200px;">
+            <div class="video-wrap position-relative">
+                <div class="video-icon" >
+                    <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- video_end -->      
+   
+    
+    <!--? About Law Start-->
+    <section class="about-low-area mt-80">
+        <div class="container">
+            <div class="about-cap-wrapper">
+                <div class="row">
+                    <div class="col-xl-5  col-lg-6 col-md-10 offset-xl-1">
+                        <div class="about-caption mb-50">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle mb-35">
+                                <h2>100% satisfaction guaranteed.</h2>
+                            </div>
+                            <p>Almost before we knew it, we had left the ground</p>
+                            <a href="{{ url_for('appointmentform')}}" class="btn header2-btn">Make an Appointment</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <!-- about-img -->
+                        <div class="about-img">
+                            <div class="about-font-img">
+                                <img src="static/assets/img/gallery/about2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Law End-->
+</main>
+</div>
+<footer>
+   <!-- footer-bottom area -->
+        <div class="footer-bottom-area" style="padding-top: 300px;">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row">
+                        <div class="col-xl-10 ">
+                            <div class="footer-copy-right">
+                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --><br>
+                              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a target="_blank">Nexus</a>
+                              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- JS here -->
+
+<script src="./static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="./static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./static/assets/js/popper.min.js"></script>
+<script src="./static/assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="./static/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="./static/assets/js/owl.carousel.min.js"></script>
+<script src="./static/assets/js/slick.min.js"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="./static/assets/js/wow.min.js"></script>
+<script src="./static/assets/js/animated.headline.js"></script>
+<script src="./static/assets/js/jquery.magnific-popup.js"></script>
+
+<!-- Date Picker -->
+<script src="./static/assets/js/gijgo.min.js"></script>
+<!-- Nice-select, sticky -->
+<script src="./static/assets/js/jquery.nice-select.min.js"></script>
+<script src="./static/assets/js/jquery.sticky.js"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="./static/assets/js/jquery.counterup.min.js"></script>
+<script src="./static/assets/js/waypoints.min.js"></script>
+<script src="./static/assets/js/jquery.countdown.min.js"></script>
+<script src="./static/assets/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="./static/assets/js/contact.js"></script>
+<script src="./static/assets/js/jquery.form.js"></script>
+<script src="./static/assets/js/jquery.validate.min.js"></script>
+<script src="./static/assets/js/mail-script.js"></script>
+<script src="./static/assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="./static/assets/js/plugins.js"></script>
+<script src="./static/assets/js/main.js"></script>
+
+</body>
+</html>

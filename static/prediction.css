@@ -1,0 +1,240 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #E16D6C;
+  color: white;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.circle {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  -webkit-animation: circle 1s ease forwards;
+          animation: circle 1s ease forwards;
+  z-index: 20;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  10% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+.line {
+  z-index: 19;
+  position: absolute;
+  transform: translate(-50%, -50%) scaleX(0);
+  left: 50%;
+  top: 50%;
+  background: white;
+  height: 4px;
+  width: 70%;
+  -webkit-animation: line ease-in-out 1s 1s forwards;
+          animation: line ease-in-out 1s 1s forwards;
+}
+
+@-webkit-keyframes line {
+  0% {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+}
+
+@keyframes line {
+  0% {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+}
+.cover {
+  z-index: 18;
+  position: absolute;
+  width: 300px;
+  height: 42px;
+  transform: translate(-50%, -50%) scaleY(1);
+  background: #E16D6C;
+  left: 50%;
+  top: 50%;
+  -webkit-animation: cover 1s ease 2s forwards;
+          animation: cover 1s ease 2s forwards;
+}
+.cover--top {
+  top: calc(50% - (42px / 2));
+  transform-origin: top center;
+}
+.cover--bottom {
+  transform-origin: bottom center;
+  top: calc(50% + (42px / 2));
+}
+
+@-webkit-keyframes cover {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+}
+
+@keyframes cover {
+  0% {
+    transform: translate(-50%, -50%) scaleY(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scaleY(0);
+  }
+}
+.big {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 50px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 17;
+  box-sizing: border-box;
+  border: 4px solid white;
+  padding: 8px 12px;
+}
+
+.textcover {
+  width: 288px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E16D6C;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 18;
+  overflow: hidden;
+  -webkit-animation: textcover 0.3s ease-out 2.7s forwards;
+          animation: textcover 0.3s ease-out 2.7s forwards;
+}
+.textcover--top {
+  top: 40%;
+}
+.textcover--bottom {
+  top: 60%;
+}
+
+@-webkit-keyframes textcover {
+  0% {
+    width: 288px;
+  }
+  100% {
+    width: 240px;
+  }
+}
+
+@keyframes textcover {
+  0% {
+    width: 288px;
+  }
+  100% {
+    width: 240px;
+  }
+}
+.small {
+  opacity: 0;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.small--top {
+  -webkit-animation: fadein--top 1s ease 3s forwards;
+          animation: fadein--top 1s ease 3s forwards;
+}
+.small--bottom {
+  -webkit-animation: fadein--bottom 1s ease 3s forwards;
+          animation: fadein--bottom 1s ease 3s forwards;
+}
+
+@-webkit-keyframes fadein--top {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadein--top {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein--bottom {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadein--bottom {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

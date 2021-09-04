@@ -1,0 +1,64 @@
+.wantToWork-area{
+    padding-top: 120px;
+    padding-bottom: 240px;
+    @media #{$md}{
+        padding-top: 63px;
+    }
+    @media #{$sm}{
+        padding-top: 63px;
+    }
+    // @media #{$xs}{
+    //     padding-bottom: 70px;
+    // }
+    .wantToWork-caption{
+        h2{
+            font-size: 50px;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 21px;
+            display: inline-block;
+
+            @media #{$md}{
+                font-size: 30px; 
+            }
+            @media #{$sm}{
+                font-size: 35px; 
+                margin-bottom: 20px;
+            }
+            @media #{$xs}{
+                font-size: 25px; 
+                margin-bottom: 20px;
+            }
+        } 
+        p{
+            font-size: 26px;
+            font-weight: 300;
+            color: $font-color1;
+        }
+    }    
+    .wantToWork-btn{
+
+        @media #{$sm}{
+            float: left;
+            margin-top: 30px;
+        }
+        @media #{$xs}{
+            float: left;
+            margin-top: 30px;
+        }
+        @media #{$md}{
+            float: left;
+            margin-top: 30px;
+        }
+    }
+}
+.sm-left{
+    @media #{$xs}{
+        float: left;
+        margin-top: 30px;
+    } 
+    @media #{$sm}{
+        float: left;
+        margin-top: 30px;
+    } 
+}

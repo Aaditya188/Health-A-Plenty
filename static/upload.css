@@ -1,0 +1,107 @@
+@charset "UTF-8";
+body .container {
+  margin: 10px;
+  max-width: 900px;
+}
+body .container .image-row {
+  padding-top: 20px;
+}
+body .container .image-upload {
+  background-color: #fafafa;
+  border: dashed 2px #ccc;
+  height: 300px;
+  text-align: center;
+}
+body .container .image-upload .image-icon {
+  position: relative;
+  top: 50px;
+  display: block;
+}
+body .container .image-upload .image-icon::before {
+  font-family: "FontAwesome";
+  content: "";
+  font-size: 6rem;
+}
+body .container .image-upload .image-instr {
+  padding: 20px;
+  display: block;
+}
+body .container ul.image-status li .badge {
+  float: right;
+}
+body .container ul.image-status li .progress {
+  margin-top: 5px;
+  line-height: 0.5rem;
+  height: 8px;
+}
+body .container ul.image-status li .max-size-limit {
+  float: right;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+body .container .alert {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+body .images-to-upload {
+  margin-top: 10px;
+  background-color: #fafafa;
+  border: solid 1px #ccc;
+  min-height: 150px;
+  padding: 10px;
+}
+body .images-to-upload ul {
+  list-style: none;
+  display: inline-block;
+}
+body .images-to-upload ul li {
+  float: left;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.1) inset;
+  padding: 5px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: all 0.5s;
+}
+body .images-to-upload ul li img {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+}
+body .images-to-upload ul li .image-remove {
+  position: relative;
+  top: -105px;
+  right: -75px;
+  font-size: 1.5rem;
+  color: #F22E2E;
+  background-color: #fff;
+  border-radius: 50%;
+}
+body .images-to-upload ul li .image-size {
+  background-color: #418bd8;
+  color: #fff;
+  font-size: 0.75rem;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+  position: relative;
+  top: -10px;
+  right: 10px;
+}
+body .images-to-upload ul li.to-remove {
+  opacity: 0;
+}
+body .images-to-upload ul li.upload-err {
+  background-color: #F22E2E;
+  opacity: 0.5;
+}
+body .images-to-upload ul li.upload-err .image-size {
+  background-color: #F22E2E;
+}

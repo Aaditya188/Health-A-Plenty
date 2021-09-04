@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC>
+<html class="supernova">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="#">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+  <meta name="HandheldFriendly" content="true" />
+  <title>Diabetes Predictor</title>
+  <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+  <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f30e2a790832f3e96009402"/>
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="static/diabetes.css" />
+  <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+  <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+</head>
+
+<body>
+<form class="jotform-form" action="{{ url_for('diabetes')}}" method="POST">
+  <div role="main" class="form-all">
+    <style>
+      .form-all:before { background: none;}
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_14" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 class="form-header" data-component="header">
+              Diabetes Predictor
+            </h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email">
+        <label for="first" class="form-label form-label-top form-label-auto">
+          Pregnancies
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="first" type="text" name="Pregnancies" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email">
+        <label for="first" class="form-label form-label-top form-label-auto">
+          Glucose
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="first" type="text" name="Glucose" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_spinner">
+        <label for="third" class="form-label form-label-top form-label-auto" for="third">
+          Blood Pressure
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="third" type="text" name="BloodPressure" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required allowTime" data-type="control_datetime">
+        <label for="fourth" class="form-label form-label-top form-label-auto">
+          Skin Thickness
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="fourth" type="text" name="SkinThickness" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate" id="id_20">
+        <label for="fifth" class="form-label form-label-top form-label-auto" id="label_20" for="input_20">
+          Insulin
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="fifth" type="text" name="Insulin" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="sixth" class="form-label form-label-top form-label-auto">
+          Body Mass Index(BMI)
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" type="text" name="BMI"  required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="seventh" class="form-label form-label-top form-label-auto">
+          Diabetes Pedigree Function
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="seventh" type="text" name="DiabetesPedigreeFunction" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="eighth" class="form-label form-label-top form-label-auto">
+          Age
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="Total_Protiens" id="eighth" type="text" name="Age" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button">
+        <div class="form-input-wide">
+          <div data-align="center" class="form-buttons-wrapper form-buttons-center">
+            <button type="submit" class="form-submit-button submit-button jf-form-buttons">
+              Submit
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="formFooter-heightMask">
+  </div>
+</form></body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC>
+<html class="supernova">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="shortcut icon" href="#">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+  <meta name="HandheldFriendly" content="true" />
+  <title>Breast Cancer Predictor</title>
+  <style type="text/css">@media print{.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
+  <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f30e2a790832f3e96009402"/>
+  <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.27398" />
+  <link type="text/css" rel="stylesheet" href="static/breastcancer.css" />
+  <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+  <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+  <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+  <script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.27398" type="text/javascript"></script>
+</head>
+
+<body>
+<form class="jotform-form" action="{{ url_for('breastcancer')}}" method="POST">
+  <div role="main" class="form-all">
+    <style>
+      .form-all:before { background: none;}
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_14" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 class="form-header" data-component="header">
+              Breast Cancer Predictor
+            </h1>
+          </div>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_email">
+        <label for="first" class="form-label form-label-top form-label-auto">
+          Texture Mean - standard deviation of gray-scale values
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="first" name="texture_mean" type="number" step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_dropdown">
+        <label for="third" class="form-label form-label-top form-label-auto" for="third">
+          Perimeter Mean - Mean size of the core tumor
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="second" name="perimeter_mean" type="number" step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_spinner">
+        <label for="third" class="form-label form-label-top form-label-auto" for="third">
+          Smoothness Mean - Mean of local variation in radius lengths
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="third" name="smoothness_mean" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required allowTime" data-type="control_datetime">
+        <label for="fourth" class="form-label form-label-top form-label-auto">
+          Compactness Mean
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="fourth" name="compactness_mean" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate" id="id_20">
+        <label for="fifth" class="form-label form-label-top form-label-auto" id="label_20" for="input_20">
+          Concavity Mean - Mean of severity of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="fifth" name="concavity_mean" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="sixth" class="form-label form-label-top form-label-auto">
+          Concave Points Mean - Mean for number of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="sixth" name="concave_points_mean" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="seventh" class="form-label form-label-top form-label-auto">
+          Symmetry Mean
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="seventh" name="symmetry_mean" type="number"  step="any" required="required" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_radio">
+        <label for="eighth" class="form-label form-label-top form-label-auto">
+          Radius Se - Standard error for the mean of distances from center to points on the perimeter
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="radius_se" id="eighth" type="number"  step="any" required="required" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="ninth" class="form-label form-label-top form-label-auto">
+          Compactness Se - Standard error for perimeter² / area — 1.0
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="ninth" name="compactness_se" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="tenth" class="form-label form-label-top form-label-auto">
+          Concavity Se - Standard error for severity of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" id="tenth" name="concavity_se" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="eleventh" class="form-label form-label-top form-label-auto">
+          Concave Points Se - Standard error for number of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="concave_points_se" id="eleventh" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="twelveth" class="form-label form-label-top form-label-auto">
+          Texture Worst - “worst” or largest mean value for standard deviation of gray-scale values
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="texture_worst" id="twelfth" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="thirteenth" class="form-label form-label-top form-label-auto">
+          Smoothness Worst - “worst” or largest mean value for local variation in radius lengths
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="smoothness_worst" id="thirteenth" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="forteenth" class="form-label form-label-top form-label-auto">
+          Compactness Worst - “worst” or largest mean value for perimeter² / area — 1.0
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="compactness_worst" id="fourteenth" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="fifteenth" class="form-label form-label-top form-label-auto">
+          Concavity Worst - “worst” or largest mean value for severity of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="concavity_worst" id="fifteenth" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="sixteenth" class="form-label form-label-top form-label-auto">
+          Concave Points Worst - “worst” or largest mean value for number of concave portions of the contour
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="concave_points_worst" id="sixteenth" type="number" step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="seventeenth" class="form-label form-label-top form-label-auto">
+          Symmetry Worst
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="symmetry_worst" id="seventeenth" type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line jf-required" data-type="control_birthdate">
+        <label for="eighteenth" class="form-label form-label-top form-label-auto">
+          Fractal Dimension Worst - “worst” or largest mean value for “coastline approximation” — 1
+          <span class="form-required">
+            *
+          </span>
+        </label>
+        <div class="form-input-wide jf-required" data-layout="half">
+          <span class="form-sub-label-container" style="vertical-align:top">
+            <input type="number" class="form-textbox validate" style="width:310px" size="310" name="fractal_dimension_worst" id="eighteenth"  type="number"  step="any" required="required" />
+          </span>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button">
+        <div class="form-input-wide">
+          <div data-align="center" class="form-buttons-wrapper form-buttons-center">
+            <button id="sub" type="submit" class="form-submit-button submit-button jf-form-buttons">
+              Submit
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="formFooter-heightMask">
+  </div>
+</form></body>
+</html>
