@@ -1,7 +1,5 @@
 # Health-A-Plenty
 # Health a plenty is an online platform to run your health diagnostics. 
-# All rights are reserved by Nexus.
-# Please don't push any changes in the repository with commenting.
 
 The search is over. We present to you ‘Health-A-Plenty’ where you can diagnose any of the main disease such as Heart,Liver Disease, Breast Cancer, Diabetes, Malaria, Pneumonia.
 Also you can check your COVID-19 Symptoms and can get the possibility whether you having COVID or not.
@@ -27,7 +25,7 @@ What we do is with the help of our website you can check your medical status to 
 2. Now you can the main Website by heading toward **healthcare_app.py** file. Simply run the file in any Code Editor (VS Code, Py Charm, etc..)
 
 ```python
-$ python main.py
+$ python healthcare_app.py
 ```
      
  ## Home
