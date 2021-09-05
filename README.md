@@ -19,7 +19,7 @@ As we look into the current scenario of the modern world, it's clearly visible t
 What we do is with the help of our website you can check your medical status to ensure that you are completely safe or may require a doctor for your current health status. Due to unavailability of proper resources we still have access to only some of the major diseases like some heart disease, liver disease, malaria, pneumonia, breast cancer and the most common one diabetes.
 
 
-![Website Homepage](static/assets/img/logo/loader.png)
+![Logo](SS/logo.png)
 
 
 ## How to Run :
