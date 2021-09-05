@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Hack-A-Plenty | Login or Signup</title>
+      <link rel="stylesheet" href="static/login.css">
+      <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+      </head>
+    <body>
+      <div class="background-shape circle-one"></div> 
+      <div class="background-shape circle-two"></div> 
+      <div class="background-shape square-one"></div> 
+      <div class="background-shape square-two"></div> 
+      <div class="background-shape square-three"></div> 
+      <div class="background-shape triangle-one"></div> 
+      <div class="background-shape triangle-two"></div> 
+      <div class="background-shape triangle-three"></div> 
+      <div class="background-shape triangle-three1"></div> 
+      <div class="background-shape rectangle-one"></div> 
+      <div class="background-shape rectangle-two"></div>
+      <div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" type="submit" onclick="GoogleLogin()" class="social"><i class="fab fa-google"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" id="signupname"/>
+            <input type="email" placeholder="Email" id="signupemail"/>
+            <input type="password" placeholder="Password" id="signuppass" />
+            <button onclick="RegisterUser()" >Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" type="submit" onclick="GoogleLogin()" class="social"><i class="fab fa-google"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" id="signinemail" />
+            <input type="password" placeholder="Password" id="signinpass" />
+            <a href="#" class="forgot-password" id="myBtn">Forgot your password?</a>
+            <button onclick="LoginUser()" >Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Reset password</h3>
+            
+            <div class="card-text">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Enter your email address and we will send you a link to reset your password.</label>
+                        <input type="email" id="email" class="form-control form-control-sm" placeholder="Enter your email address">
+                    </div>
+    
+                    <button id="resetPassword" onclick="resetPasswordFunction()" type="submit" class="btn btn-primary btn-block">Send password reset email</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <span class="close">&times;</span>
+    </div>
+  </div>
+
+</body>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => container.classList.add('right-panel-active'));
+
+    signInButton.addEventListener('click', () => container.classList.remove('right-panel-active'));
+
+    var name, email, name1;
+    function insertdata(){
+    name = document.getElementById('signupname').value;
+    mail = document.getElementById('signupemail').value;
+    name1 = mail.substring(0, mail.lastIndexOf("@"));
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+        var user = firebase.auth().currentUser;
+        if(user != null){
+            firebase.database().ref('profile/'+name1).set({
+                Name: name,
+                Email: mail
+            });
+            }
+        }
+        });
+    }
+    function RegisterUser() {
+    var email=document.getElementById('signupemail').value;
+    var password=document.getElementById('signuppass').value;
+    firebase.auth().createUserWithEmailAndPassword(email,password).then(function(){
+    window.alert("Sign Up Successfull ! Proceed to Login ..")
+    var id=firebase.auth().currentUser.uid;
+    insertdata();
+    }).catch(function(error){
+
+    var errorcode=error.code;
+    var errormsg=error.message;
+    window.alert("Error : " +errorMsg)
+    
+    });
+    }
+
+    function LoginUser(){
+    var email=document.getElementById('signinemail').value;
+    var password=document.getElementById('signinpass').value;
+    firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
+    var id=firebase.auth().currentUser.uid;
+    localStorage.setItem('id',id);
+    window.location.href="{{ url_for('home') }}";
+    }).catch(function(error){
+
+    var errorCode=error.code;
+    var errorMsg=error.message;
+    window.alert("Error : " +errorMsg)
+
+    });
+    }
+    function GoogleLogin() {
+    var provider=new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function () {
+    alert('Sign Up Successfully! Now Login to your Account');
+    }).catch(function (error) {
+    var errorMessage=error.message;
+    alert(errorMessage);
+    });
+    }
+
+
+    const resetPasswordFunction = () => {
+    const email = mailField.value;
+
+    if(!email)
+    {
+    window.alert("Please enter a registered email");
+    }
+    else
+    {
+
+    auth.sendPasswordResetEmail(email).then(() => {
+
+    window.alert('Password Reset Email Sent Successfully!');
+
+    }).catch(function(error){
+
+    window.alert("Please enter a registered email");
+    });
+    }
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+          authDomain: "health-a-plenty.firebaseapp.com",
+          projectId: "health-a-plenty",
+          storageBucket: "health-a-plenty.appspot.com",
+          messagingSenderId: "495387763561",
+          appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const mailField = document.getElementById('email');
+        const labels = document.getElementsByTagName('label');
+        const resetPassword = document.getElementById('resetPassword');
+        const successModal = document.querySelector('.success');
+        const failureModal = document.querySelector('.failure');
+        const auth = firebase.auth();
+    </script>
+</html>

@@ -16,6 +16,9 @@ model_malaria = load_model('malariadisease.h5')
 model_pneumonia = load_model('pneumonia_disease.h5')
 
 @app.route('/',methods=['GET'])
+def index():
+    return render_template('index.html')
+
 @app.route('/home',methods=['GET'])
 def home():
     return render_template('home.html')
@@ -56,9 +59,9 @@ def heartdisease():
         Thalassemia=int(request.form['thal'])
         prediction=model_heartdisease.predict([[Age, Gender, ChestPain, BloodPressure, ElectrocardiographicResults, MaxHeartRate, ExerciseInducedAngina, STdepression, ExercisePeakSlope, MajorVesselsNo, Thalassemia]])
         if prediction==1:
-            return render_template('prediction.html', greet="Oops!", prediction="You have Heart Disease.")
+            return render_template('prediction.html', greet="Oops!", prediction="You've Heart Issue")
         else:
-            return render_template('prediction.html', greet="Congrats!", prediction="You are Normal.")
+            return render_template('prediction.html', greet="Congrats!", prediction="You are Normal")
     else:
         return render_template('heartdisease.html')
 
@@ -78,9 +81,9 @@ def liverdisease():
         Albumin_and_Globulin_Ratio= float(request.form['Albumin_and_Globulin_Ratio'])
         prediction=model_liverdisease.predict([[Age, Gender, Total_Bilirubin, Direct_Bilirubin, Alkaline_Phosphotase, Alamine_Aminotransferase, Aspartate_Aminotransferase, Total_Protiens, Albumin, Albumin_and_Globulin_Ratio]])
         if prediction==1:
-            return render_template('prediction.html', greet="Oops!", prediction="You have Liver Disease.")
+            return render_template('prediction.html', greet="Oops!", prediction="You've Liver Issue")
         else:
-            return render_template('prediction.html', greet="Congrats!", prediction="You are Normal.")
+            return render_template('prediction.html', greet="Congrats!", prediction="You are Normal")
     else:
         return render_template('liverdisease.html')
 
@@ -111,9 +114,9 @@ def breastcancer():
            smoothness_worst, compactness_worst, concavity_worst,
            concave_points_worst, symmetry_worst, fractal_dimension_worst]])
         if prediction==1:
-            return render_template('prediction.html', greet="Oops!", prediction="The tumor is malignant.")
+            return render_template('prediction.html', greet="Oops!", prediction="Tumor is Malign")
         else:
-            return render_template('prediction.html', greet="Great!", prediction="The tumor is benign.")
+            return render_template('prediction.html', greet="Great!", prediction="Tumor is Benign")
     else:
         return render_template('breastcancer.html')
 
@@ -147,9 +150,9 @@ def malariadisease():
 
         prediction = malaria_predict(file_path)
         if prediction[0][0]>=0.5:
-            return render_template('prediction.html', greet="Oops!", prediction="You have Malaria.")
+            return render_template('prediction.html', greet="Oops!", prediction="You have Malaria")
         else:
-            return render_template('prediction.html', greet="Wow!", prediction="You have Normal.")
+            return render_template('prediction.html', greet="Wow!", prediction="You have Normal")
 
 @app.route('/pneumoniadisease', methods=['GET', 'POST'])
 def pneumoniadisease():
@@ -164,9 +167,9 @@ def pneumoniadisease():
         prediction = pneumonia_predict(file_path)
         pred=np.argmax(prediction, axis=1)
         if pred[0]==1:
-            return render_template('prediction.html', greet="Oops!", prediction="You have Pneumonia.")
+            return render_template('prediction.html', greet="Oops!", prediction="You have Pneumonia")
         else:
-            return render_template('prediction.html', greet="Great!", prediction="You are Normal.")
+            return render_template('prediction.html', greet="Great!", prediction="You are Normal")
 
 @cross_origin()
 @app.route('/diabetes',methods=['GET','POST'])
@@ -213,7 +216,7 @@ def corona():
         inputFeatures = [fever, pain, age, runnyNose, diffBreath]
         infProb = clf.predict_proba([inputFeatures])[0][1]
         if round(infProb * 100) >= 50:
-            prediction = "You may have COVID"
+            prediction = "May have COVID"
             greet = "Oops!"
         else:
             prediction = "You are Normal"
@@ -226,5 +229,5 @@ def send_file(filename):
     return send_from_directory('uploads', filename)
 
 if __name__=='__main__':
-	app.run(debug=True)
+	app.run()
 
