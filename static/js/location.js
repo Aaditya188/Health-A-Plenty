@@ -1,5 +1,5 @@
 function setLocationEvents(country, state, city){
-    var server = "http://jotfor.ms/server.php";
+    var server = "https://jotfor.ms/server.php";
     country = $(country);
     state = $(state);
     city = $(city);

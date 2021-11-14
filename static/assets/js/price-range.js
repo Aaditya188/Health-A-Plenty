@@ -3,11 +3,11 @@
 // Â© Denis Ineshin, 2017
 // https://github.com/IonDen
 //
-// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/en.html
+// Project page:    https://ionden.com/a/plugins/ion.rangeSlider/en.html
 // GitHub page:     https://github.com/IonDen/ion.rangeSlider
 //
 // Released under MIT licence:
-// http://ionden.com/a/plugins/licence-en.html
+// https://ionden.com/a/plugins/licence-en.html
 // =====================================================================================================================
 
 ;(function(factory) {
@@ -2333,8 +2333,8 @@
 
 
     // =================================================================================================================
-    // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-    // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+    // https://paulirish.com/2011/requestanimationframe-for-smart-animating/
+    // https://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
 
     // requestAnimationFrame polyfill by Erik MÃ¶ller. fixes from Paul Irish and Tino Zijdel
 

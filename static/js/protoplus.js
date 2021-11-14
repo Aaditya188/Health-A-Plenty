@@ -416,7 +416,7 @@ Object.extend(String.prototype, {
         return newStr;
     },
     /**
-     * @see http://www.conlang.info/cgi/dia.cgi
+     * @see https://www.conlang.info/cgi/dia.cgi
      */
     fixUTF: function(){
         var lowerCase={"a":"00E1:0103:01CE:00E2:00E4:0227:1EA1:0201:00E0:1EA3:0203:0101:0105:1D8F:1E9A:00E5:1E01:2C65:00E3:0251:1D90","b":"1E03:1E05:0253:1E07:1D6C:1D80:0180:0183","c":"0107:010D:00E7:0109:0255:010B:0188:023C","d":"010F:1E11:1E13:0221:1E0B:1E0D:0257:1E0F:1D6D:1D81:0111:0256:018C","e":"00E9:0115:011B:0229:00EA:1E19:00EB:0117:1EB9:0205:00E8:1EBB:0207:0113:2C78:0119:1D92:0247:1EBD:1E1B","f":"1E1F:0192:1D6E:1D82","g":"01F5:011F:01E7:0123:011D:0121:0260:1E21:1D83:01E5","h":"1E2B:021F:1E29:0125:2C68:1E27:1E23:1E25:0266:1E96:0127","i":"0131:00ED:012D:01D0:00EE:00EF:1ECB:0209:00EC:1EC9:020B:012B:012F:1D96:0268:0129:1E2D","j":"01F0:0135:029D:0249","k":"1E31:01E9:0137:2C6A:A743:1E33:0199:1E35:1D84:A741","l":"013A:019A:026C:013E:013C:1E3D:0234:1E37:2C61:A749:1E3B:0140:026B:1D85:026D:0142:0269:1D7C","m":"1E3F:1E41:1E43:0271:1D6F:1D86","n":"0144:0148:0146:1E4B:0235:1E45:1E47:01F9:0272:1E49:019E:1D70:1D87:0273:00F1","o":"00F3:014F:01D2:00F4:00F6:022F:1ECD:0151:020D:00F2:1ECF:01A1:020F:A74B:A74D:2C7A:014D:01EB:00F8:00F5","p":"1E55:1E57:A753:01A5:1D71:1D88:A755:1D7D:A751","q":"A759:02A0:024B:A757","r":"0155:0159:0157:1E59:1E5B:0211:027E:0213:1E5F:027C:1D72:1D89:024D:027D","s":"015B:0161:015F:015D:0219:1E61:1E63:0282:1D74:1D8A:023F","t":"0165:0163:1E71:021B:0236:1E97:2C66:1E6B:1E6D:01AD:1E6F:1D75:01AB:0288:0167","u":"00FA:016D:01D4:00FB:1E77:00FC:1E73:1EE5:0171:0215:00F9:1EE7:01B0:0217:016B:0173:1D99:016F:0169:1E75:1D1C:1D7E","v":"2C74:A75F:1E7F:028B:1D8C:2C71:1E7D","w":"1E83:0175:1E85:1E87:1E89:1E81:2C73:1E98","x":"1E8D:1E8B:1D8D","y":"00FD:0177:00FF:1E8F:1EF5:1EF3:01B4:1EF7:1EFF:0233:1E99:024F:1EF9","z":"017A:017E:1E91:0291:2C6C:017C:1E93:0225:1E95:1D76:1D8E:0290:01B6:0240","ae":"00E6:01FD:01E3","dz":"01F3:01C6","3":"0292:01EF:0293:1D9A:01BA:01B7:01EE"};
@@ -446,7 +446,7 @@ Object.extend(String.prototype, {
 
 /**
  * php's $_GET equivalent 
- * @example "http://www.example.com?name=serkan" to document.get.name => "serkan"
+ * @example "https://www.example.com?name=serkan" to document.get.name => "serkan"
  */
 var __result = document.URL.toQueryParams();
 
@@ -619,7 +619,7 @@ Object.extend(document, {
     },
     /**
      * Wrapper for keyboard shortcut script of OpenJS
-     * @link http://www.openjs.com/scripts/events/keyboard_shortcuts/
+     * @link https://www.openjs.com/scripts/events/keyboard_shortcuts/
      * @param {Object} map
      */
     keyboardMap: function(map){ document.keyMap = map; var shortcut = { 'all_shortcuts': {}, 'add': function(shortcut_combination, callback, opt){ var default_options = { 'type': 'keydown', 'propagate': false, 'disable_in_input': false, 'target': document, 'keycode': false }; if (!opt) { opt = default_options; } else { for (var dfo in default_options) { if (typeof opt[dfo] == 'undefined') { opt[dfo] = default_options[dfo]; } } } var ele = opt.target; if (typeof opt.target == 'string') { ele = document.getElementById(opt.target);  } var ths = this; shortcut_combination = shortcut_combination.toLowerCase(); var func = function(e){ e = e || window.event; if (opt.disable_in_input) { var element; if (e.target) { element = e.target;  } else if (e.srcElement) { element = e.srcElement;  } if (element.nodeType == 3) { element = element.parentNode;  } if (element.tagName == 'INPUT' || element.tagName == 'TEXTAREA' || element.readAttribute('contenteditable') || document._onedit) { return;  } } if (e.keyCode) { code = e.keyCode;  } else if (e.which) { code = e.which;  } var character = String.fromCharCode(code).toLowerCase(); if (code == 188) { character = ",";  } if (code == 190) { character = ".";  } var keys = shortcut_combination.split("+"); var kp = 0; var shift_nums = { "`": "~", "1": "!", "2": "@", "3": "#", "4": "$", "5": "%", "6": "^", "7": "&", "8": "*", "9": "(", "0": ")", "-": "_", "=": "+", ";": ":", "'": "\"", ",": "<", ".": ">", "/": "?", "\\": "|" }; var special_keys = { 'esc': 27, 'escape': 27, 'tab': 9, 'space': 32, 'return': 13, 'enter': 13, 'backspace': 8, 'scrolllock': 145, 'scroll_lock': 145, 'scroll': 145, 'capslock': 20, 'caps_lock': 20, 'caps': 20, 'numlock': 144, 'num_lock': 144, 'num': 144, 'pause': 19, 'break': 19, 'insert': 45, 'home': 36, 'delete': 46, 'end': 35, 'pageup': 33, 'page_up': 33, 'pu': 33, 'pagedown': 34, 'page_down': 34, 'pd': 34, 'left': 37, 'up': 38, 'right': 39, 'down': 40, 'f1': 112, 'f2': 113, 'f3': 114, 'f4': 115, 'f5': 116, 'f6': 117, 'f7': 118, 'f8': 119, 'f9': 120, 'f10': 121, 'f11': 122, 'f12': 123 }; var modifiers = { shift: { wanted: false, pressed: false }, ctrl: { wanted: false, pressed: false }, alt: { wanted: false, pressed: false }, meta: { wanted: false, pressed: false } }; if (e.ctrlKey) { modifiers.ctrl.pressed = true;  } if (e.shiftKey) { modifiers.shift.pressed = true;  } if (e.altKey) { modifiers.alt.pressed = true;  } if (e.metaKey) { modifiers.meta.pressed = true;  } for (var i = 0; i < keys.length; i++) { k = keys[i]; if (k == 'ctrl' || k == 'control') { kp++; modifiers.ctrl.wanted = true; } else if (k == 'shift') { kp++; modifiers.shift.wanted = true; } else if (k == 'alt') { kp++; modifiers.alt.wanted = true; } else if (k == 'meta') { kp++; modifiers.meta.wanted = true; } else if (k.length > 1) { if (special_keys[k] == code) { kp++;  } } else if (opt.keycode) { if (opt.keycode == code) { kp++;  } } else { if (character == k) { kp++;  } else { if (shift_nums[character] && e.shiftKey) { character = shift_nums[character]; if (character == k) { kp++;  } } } } } if (kp == keys.length && modifiers.ctrl.pressed == modifiers.ctrl.wanted && modifiers.shift.pressed == modifiers.shift.wanted && modifiers.alt.pressed == modifiers.alt.wanted && modifiers.meta.pressed == modifiers.meta.wanted) { callback(e); if (!opt.propagate) { e.cancelBubble = true; e.returnValue = false; if (e.stopPropagation) { e.stopPropagation(); e.preventDefault(); } return false; } } }; this.all_shortcuts[shortcut_combination] = { 'callback': func, 'target': ele, 'event': opt.type }; if (ele.addEventListener) { ele.addEventListener(opt.type, func, false);  } else if (ele.attachEvent) { ele.attachEvent('on' + opt.type, func);  } else { ele['on' + opt.type] = func;  } }, 'remove': function(shortcut_combination){ shortcut_combination = shortcut_combination.toLowerCase(); var binding = this.all_shortcuts[shortcut_combination]; delete (this.all_shortcuts[shortcut_combination]); if (!binding) { return; } var type = binding.event; var ele = binding.target; var callback = binding.callback; if (ele.detachEvent) { ele.detachEvent('on' + type, callback);  } else if (ele.removeEventListener) { ele.removeEventListener(type, callback, false);  } else { ele['on' + type] = false;  } } }; $H(map).each(function(pair){ var key = pair.key; var opts = pair.value; shortcut.add(key, opts.handler, { disable_in_input: opts.disableOnInputs }); }); },
@@ -631,8 +631,8 @@ Object.extend(document, {
 });
 
 /**
- * @link http://adomas.org/javascript-mouse-wheel/ prototype extension by "Frank Monnerjahn" themonnie @gmail.com
- * @link http://www.ogonek.net/mousewheel/demo.html
+ * @link https://adomas.org/javascript-mouse-wheel/ prototype extension by "Frank Monnerjahn" themonnie @gmail.com
+ * @link https://www.ogonek.net/mousewheel/demo.html
  * @usage $('wheel-div').observe(Event.mousewheel, function(e){ Event.wheel(e); });
  */
 Object.extend(Event, {

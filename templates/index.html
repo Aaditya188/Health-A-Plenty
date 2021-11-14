@@ -7,6 +7,23 @@
       <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
       </head>
+      <style>
+        .signup{
+            border-radius: 20px;
+            border: 1px solid #00FF00;
+            background-color: #00FF00;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            outline: none;
+            text-transform: uppercase;
+        }
+        .signup:active {
+          transform: scale(0.95);
+        }
+      </style>
     <body>
       <div class="background-shape circle-one"></div> 
       <div class="background-shape circle-two"></div> 
@@ -30,7 +47,7 @@
             <input type="text" placeholder="Name" id="signupname"/>
             <input type="email" placeholder="Email" id="signupemail"/>
             <input type="password" placeholder="Password" id="signuppass" />
-            <button onclick="RegisterUser()" >Sign Up</button>
+            <a class="signup" href="#" type="submit" onclick="RegisterUser()" >Sign Up</a>
         </form>
     </div>
     <div class="form-container sign-in-container">
@@ -38,12 +55,13 @@
             <h1>Sign in</h1>
             <div class="social-container">
                 <a href="#" type="submit" onclick="GoogleLogin()" class="social"><i class="fab fa-google"></i></a>
+                <a href="{{ url_for('sawo') }}" type="submit" class="social"><i class="fas fa-lock-open"></i></a>
             </div>
             <span>or use your account</span>
             <input type="email" placeholder="Email" id="signinemail" />
             <input type="password" placeholder="Password" id="signinpass" />
             <a href="#" class="forgot-password" id="myBtn">Forgot your password?</a>
-            <button onclick="LoginUser()" >Sign In</button>
+            <a class="signup" href="#" type="submit" onclick="LoginUser()" >Sign In</a>
         </form>
     </div>
     <div class="overlay-container">
@@ -87,6 +105,29 @@
   </div>
 
 </body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+        authDomain: "health-a-plenty.firebaseapp.com",
+        databaseURL: "https://health-a-plenty-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "health-a-plenty",
+        storageBucket: "health-a-plenty.appspot.com",
+        messagingSenderId: "495387763561",
+        appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+      };
+        firebase.initializeApp(firebaseConfig);
+        const mailField = document.getElementById('email');
+        const labels = document.getElementsByTagName('label');
+        const resetPassword = document.getElementById('resetPassword');
+        const successModal = document.querySelector('.success');
+        const failureModal = document.querySelector('.failure');
+        const auth = firebase.auth();
+    </script>
 
   <script>
     var modal = document.getElementById("myModal");
@@ -193,25 +234,4 @@
     }
     }
   </script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
-    <script>
-        var firebaseConfig = {
-          apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
-          authDomain: "health-a-plenty.firebaseapp.com",
-          projectId: "health-a-plenty",
-          storageBucket: "health-a-plenty.appspot.com",
-          messagingSenderId: "495387763561",
-          appId: "1:495387763561:web:379bc47110e8dbea5653f8"
-        };
-        firebase.initializeApp(firebaseConfig);
-        const mailField = document.getElementById('email');
-        const labels = document.getElementsByTagName('label');
-        const resetPassword = document.getElementById('resetPassword');
-        const successModal = document.querySelector('.success');
-        const failureModal = document.querySelector('.failure');
-        const auth = firebase.auth();
-    </script>
 </html>

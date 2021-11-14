@@ -1,0 +1,52 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Health-A-Plenty | Passwordless Login</title>
+        
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="https://gcdn.pbrd.co/images/4wgHA9P6bO4h.png?o=1q" type="image/x-icon">
+        
+        <link rel="stylesheet" href="static/otp.css" />
+    </head>
+    <style>
+        .sawo-container{
+            width: 640px; /* Can be in percentage also. */
+            height: auto;
+            margin: 0 auto;
+            padding: 10px;
+            position: relative;
+        }
+    </style>
+    <body>
+        <div class="background-shape circle-one"></div> 
+        <div class="background-shape circle-two"></div> 
+        <div class="background-shape square-one"></div> 
+        <div class="background-shape square-two"></div> 
+        <div class="background-shape square-three"></div> 
+        <div class="background-shape triangle-one"></div> 
+        <div class="background-shape triangle-two"></div> 
+        <div class="background-shape triangle-three"></div> 
+        <div class="background-shape triangle-three1"></div> 
+        <div class="background-shape rectangle-one"></div> 
+        <div class="background-shape rectangle-two"></div>
+        
+        <div class="container">
+            <br><br>
+            <div id="sawo-container" class="sawo-container" style="height: 300px; width: 300px;"></div>
+        </div>
+        <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+        <script>
+            var config = {
+                containerID: "sawo-container",
+                identifierType: "phone_number_sms",
+                apiKey: "6bef0849-3541-4303-9541-1bbe851bc700",
+                onSuccess: (payload) => {
+                    window.location.href="{{ url_for('home') }}";
+                },
+            };
+            var sawo = new Sawo(config);
+            sawo.showForm();
+        </script>
+    </body> 
+</html>

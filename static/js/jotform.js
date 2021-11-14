@@ -614,24 +614,24 @@ var JotForm = {
                         ignoreErrors: [
                             // Random plugins/extensions
                             'top.GLOBALS',
-                            // See: http://blog.errorception.com/2012/03/tale-of-unfindable-js-error. html
+                            // See: https://blog.errorception.com/2012/03/tale-of-unfindable-js-error. html
                             'originalCreateNotification',
                             'canvas.contentDocument',
                             'MyApp_RemoveAllHighlights',
-                            'http://tt.epicplay.com',
+                            'https://tt.epicplay.com',
                             'Can\'t find variable: ZiteReader',
                             'jigsaw is not defined',
                             'ComboSearch is not defined',
-                            'http://loading.retry.widdit.com/',
+                            'https://loading.retry.widdit.com/',
                             'atomicFindClose',
                             // Facebook borked
                             'fb_xd_fragment',
                             // ISP "optimizing" proxy - `Cache-Control: no-transform` seems to
                             // reduce this. (thanks @acdha)
-                            // See http://stackoverflow.com/questions/4113268
+                            // See https://stackoverflow.com/questions/4113268
                             'bmi_SafeAddOnload',
                             'EBCallBackMessageReceived',
-                            // See http://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
+                            // See https://toolbar.conduit.com/Developer/HtmlAndGadget/Methods/JSInjection.aspx
                             'conduitPage',
                             'tinymce',
                             // Common error caused by test software on a specific chrome version
@@ -1445,7 +1445,7 @@ var JotForm = {
     fixIESubmitURL: function () {
         try {
             // IE on XP does not support TLS SSL
-            // http://en.wikipedia.org/wiki/Server_Name_Indication#Support
+            // https://en.wikipedia.org/wiki/Server_Name_Indication#Support
             if (this.ie() <= 8 && navigator.appVersion.indexOf('NT 5.')) {
                 $A(this.forms).each(function (form) {
                     if (form.action.include("s://submit.")) {
@@ -1579,7 +1579,7 @@ var JotForm = {
             "accept-charset": 'utf-8'
         }).hide();
         // Create a syntethic doctype for page source. This is the most common doctype so I choose this
-        var doc = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >';
+        var doc = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >';
         // Hide Jotform specific page element on the parent, so they do not appear on screenshot
 
         /*if(this.compact){
@@ -2695,7 +2695,7 @@ var JotForm = {
         function device() {
             if (is.mobile()) {
                 // separate ios detection because the new windows phone user agent now includes ios
-                // http://www.neowin.net/news/ie11-fakes-user-agent-to-fool-gmail-in-windows-phone-81-gdr1-update
+                // https://www.neowin.net/news/ie11-fakes-user-agent-to-fool-gmail-in-windows-phone-81-gdr1-update
                 if (is.windowsPhone() || is.androidPhone() || is.blackberry()) return "Mobile";
                 else if (is.ios()) return "iPhone";
             }
@@ -4208,7 +4208,7 @@ var JotForm = {
         var preLink = "";
         if (!JotForm.debug) {
             // if (this.url.search("https") == -1) {
-            //     preLink = "http://cdn.jotfor.ms/";
+            //     preLink = "https://cdn.jotfor.ms/";
             // } else {
             //     preLink = "https://cdn.jotfor.ms/";
             // }
@@ -5801,7 +5801,7 @@ var JotForm = {
             }
         });
 
-        // TLDR Ticket ID: http://www.jotform.com/answers/1389173
+        // TLDR Ticket ID: https://www.jotform.com/answers/1389173
         // First of all, I'm ashamed of this particular fix. Sadly, that's how we roll in conditions
         // What we were doing was that, for 'any', if we match a case that brakes condition 'any' turns into false and loop breaks
         // This should only work for 'all' however it was already including 'any' option
@@ -9561,7 +9561,7 @@ var JotForm = {
             var taxAmount = 0;                          // tax amount for the individual product
             var taxAmountWithoutDiscount = 0;           // tax amount for the individual product
             var subproduct = false;                     // is this a subproduct?
-            var parentProductKey;                       // subproduct's parent key (see http://www.jotform.com/help/264-Create-Sub-Products-Based-on-a-Product-Option)
+            var parentProductKey;                       // subproduct's parent key (see https://www.jotform.com/help/264-Create-Sub-Products-Based-on-a-Product-Option)
             var recur = pair.value.recurring;           // subscription's recurring payment amount
             var isSpecialPricing = false;               // Check that is there a special pricing
             var quantity = 1;                           // Product quantity
@@ -11691,7 +11691,7 @@ var JotForm = {
 
         function linkValidation(link) {
           if (link && link.length > 0) {
-            var validation = link.search("http:\/\/");
+            var validation = link.search("https:\/\/");
             link = (validation >= 0 || link.toLowerCase().indexOf('https') >= 0) ? link : 'https:\/\/' + link;
           } else {
             link = "https://www.jotform.com";
@@ -13416,7 +13416,7 @@ var JotForm = {
          }*/
 
         // if (this.url.search("https") == -1) {
-        //     var preLink = "http://cdn.jotfor.ms/";
+        //     var preLink = "https://cdn.jotfor.ms/";
         // } else {
         //     var preLink = "https://cdn.jotfor.ms/";
         //     // var preLink = "https://www.jotform.com/";

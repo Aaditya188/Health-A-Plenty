@@ -79,3 +79,134 @@ body{
 @media screen and (max-width: 976px){
 	
 }
+.popup {
+	background: rgba(100, 100, 100, 0.5);
+	position: fixed;
+	display: none;
+	z-index: 5000;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.popup > div {
+	max-width: 600px;
+	width: 70%;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	background: #FFFFFF;
+	padding: 30px;
+	z-index: 5001;
+	text-align: center;
+	border: 5px solid #9AD3DE;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+.popup2 {
+	background: rgba(100, 100, 100, 0.5);
+	position: fixed;
+	display: none;
+	z-index: 5000;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.popup2 > div {
+	max-width: 600px;
+	width: 100%;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	padding: 40px;
+	z-index: 5001;
+	text-align: center;
+}
+
+
+
+
+  /*=================
+  * TIMER
+  *=================*/
+
+
+  .timer {
+	width: 550px;
+	height: 248px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -275px;
+	margin-top: -124px;
+	color: black;
+  }
+  .timer * {
+	cursor: default;
+  }
+  .timer h3 {
+	width: 100%;
+	font-size: 26px;
+	letter-spacing: 4px;
+	text-align: center;
+  }
+  .timer--clock {
+	width: 100%;
+	position: relative;
+	padding-left: 6px;
+	margin-top: 22px;
+	overflow: hidden;
+  }
+  .timer--clock .clock-display-grp {
+	width: 100%;
+	position: relative;
+  }
+  .timer--clock .clock-display-grp .number-grp {
+	width: auto;
+	display: block;
+	height: 158px;
+	float: left;
+	overflow: hidden;
+  }
+  .timer--clock .clock-display-grp .number-grp .number-grp-wrp {
+	width: 100%;
+	position: relative;
+  }
+  .timer--clock .clock-display-grp .number-grp .number-grp-wrp .num {
+	width: 100%;
+	position: relative;
+	height: 156px;
+  }
+  .timer--clock .clock-display-grp .number-grp .number-grp-wrp .num p {
+	width: auto;
+	display: table;
+	font-size: 205px;
+	line-height: 150px;
+	font-weight: bold;
+  }
+  .timer--clock .clock-separator {
+	width: auto;
+	float: left;
+	display: block;
+	height: 156px;
+  }
+  .timer--clock .clock-separator p {
+	width: auto;
+	display: table;
+	font-size: 205px;
+	line-height: 150px;
+	font-weight: bold;
+  }
+  .timer h4 {
+	width: 100%;
+	font-size: 10px;
+	letter-spacing: 6px;
+	text-align: center;
+	padding-top: 25px;
+	float: left;
+  }

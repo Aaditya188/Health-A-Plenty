@@ -58,20 +58,24 @@
                                         <ul id="navigation">
                                             <li><a href="{{ url_for('home')}}">Home</a></li>
                                             <li><a href="{{ url_for('about')}}">About-Us</a></li>
-                                           <li><a style="cursor:pointer;"> Services</a>
+                                            <li><a style="cursor:pointer;"> Services</a>
                                                 <ul class="submenu">
                                                     <li><a href="{{ url_for('service')}}">Diagnosis</a></li><br>
                                                     <li><a href="{{ url_for('corona')}}">Covid Tracker</a></li><br>
+                                                    <li><a href="https://nearbyhospital.herokuapp.com/">Nearby Pharmacies</a></li><br>
                                                     <li><a href="https://nearbyhospital.herokuapp.com/map">Nearby Hospital</a></li><br>
-                                                    <li><a href="https://nearbyhospital.herokuapp.com/">Nearby Pharmacies</a></li>
+                                                    <li><a href="{{ url_for('community')}}">Community Chat</a></li><br>
+                                                    <li><a href="https://healthbuddyapp.herokuapp.com/">Doctor on Call</a></li><br>
                                                 </ul>
                                             </li>
                                             <li><a href="{{ url_for('firstaid')}}">First-Aid</a></li>
-                                            <li><a href="{{ url_for('contact')}}">Contact</a></li></ul>
+                                            <li><a href="{{ url_for('contact')}}">Contact</a></li>
+                                            <li><a href="{{ url_for('viewappointment')}}">Appointments</a></li>
+                                        </ul>
                                     </nav>
                                 </div>
                                 <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                    <a href="{{ url_for('appointmentform')}}" class="btn header-btn">Make an Appointment</a>
+                                    <a href="{{ url_for('appointmentform')}}" class="btn header-btn">Make an Appointments</a>
                                 </div>
                             </div>
                         </div>   
@@ -131,6 +135,8 @@ What we do is with the help of our website you can check your medical status to 
 												</div>
 											</div>
 										</div>
+
+                                        
                     <section class="banner__slider">
                       <div class="slider stick-dots">
                         <div class="slide">
@@ -162,8 +168,8 @@ What we do is with the help of our website you can check your medical status to 
                           </div>
                         </div>
                       </div>
-                      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
+                      <svg xmlns="https://www.w3.org/2000/svg" style="display: none;">
+                        <symbol xmlns="https://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44px" height="44px" id="circle" fill="none" stroke="currentColor">
                             <circle r="20" cy="22" cx="22" id="test">
                         </symbol>
                     </svg>
@@ -213,7 +219,8 @@ What we do is with the help of our website you can check your medical status to 
 												</div>
 											</div>
 										</div>                      -->
-                  <div class="container">
+                  
+                <!-- <div class="container">
                     <h1 data-animation="fadeInUp" data-delay=".3s" style="text-align: center; padding-top: 70px; padding-bottom: 50px;"><b>Meet Our Hardworking Team<b></h1>
                     <div class="row">
                         <div class="col-6">
@@ -270,7 +277,7 @@ What we do is with the help of our website you can check your medical status to 
             </div>
         </div>
   
-    </section>
+    </section> -->
     <!--? Team End-->
   
 </main>
@@ -295,8 +302,25 @@ What we do is with the help of our website you can check your medical status to 
   </div>
 </footer>
 
-<!-- JS here -->
+<!-- Firebase Config -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+        authDomain: "health-a-plenty.firebaseapp.com",
+        projectId: "health-a-plenty",
+        storageBucket: "health-a-plenty.appspot.com",
+        messagingSenderId: "495387763561",
+        appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+      };
+      firebase.initializeApp(firebaseConfig);
+ 
+  </script>
 
+<!-- JS here -->
 <script src="./static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <!-- Jquery, Popper, Bootstrap -->
 <script src="./static/assets/js/vendor/jquery-1.12.4.min.js"></script>

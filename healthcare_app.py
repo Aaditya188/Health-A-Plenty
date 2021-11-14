@@ -16,8 +16,17 @@ model_malaria = load_model('malariadisease.h5')
 model_pneumonia = load_model('pneumonia_disease.h5')
 
 @app.route('/',methods=['GET'])
+@app.route('/index',methods=['GET'])
 def index():
     return render_template('index.html')
+
+@app.route('/viewappointment',methods=['GET'])
+def viewappointment():
+    return render_template('previousbooking.html')
+
+@app.route('/community',methods=['GET'])
+def community():
+    return render_template('community.html')
 
 @app.route('/home',methods=['GET'])
 def home():
@@ -42,6 +51,10 @@ def firstaid():
 @app.route('/service',methods=['GET'])
 def service():
     return render_template('service.html')
+
+@app.route('/passwordless',methods=['GET'])
+def sawo():
+    return render_template('sawo.html')
 
 @app.route('/heartdisease', methods=['GET','POST'])
 def heartdisease():
@@ -212,7 +225,6 @@ def corona():
         pain = int(myDict['pain'])
         runnyNose = int(myDict['runnyNose'])
         diffBreath = int(myDict['diffBreath'])
-        # Code for Inference
         inputFeatures = [fever, pain, age, runnyNose, diffBreath]
         infProb = clf.predict_proba([inputFeatures])[0][1]
         if round(infProb * 100) >= 50:
@@ -229,5 +241,5 @@ def send_file(filename):
     return send_from_directory('uploads', filename)
 
 if __name__=='__main__':
-	app.run()
+    app.run()
 

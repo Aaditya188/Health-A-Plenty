@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Previous Appointment</title>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+html,body{
+	position: absolute;
+	width: 100%;
+	height:100%;
+	/* background-color: rgba(168,255,120,0.7); */
+  	background: linear-gradient(to right, rgb(0,201,255,0.7), rgb(146,254,157,0.7));
+	overflow: auto;
+
+}
+
+.section {
+	position: relative;
+	height: 100vh;
+}
+
+.section .section-center {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#booking {
+	font-family: 'Cabin', sans-serif;
+}
+
+.booking-form {
+	position: relative;
+	max-width: 642px;
+	width: 100%;
+	margin: auto;
+	background: #fff;
+	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.booking-form>.booking-bg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 250px;
+	background-image: url('https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80');
+	background-size: cover;
+	background-position: center;
+}
+
+.booking-form>form {
+	margin-left: 250px;
+	padding: 30px;
+	border: 1px solid #f9fafc;
+	border-left: 0px;
+}
+
+.booking-form .form-header {
+	margin-bottom: 30px;
+}
+
+.booking-form .form-header h2 {
+	margin: 0;
+	margin-bottom: 0px;
+	font-weight: 700;
+	color: #122244;
+	font-size: 35px;
+	text-transform: capitalize;
+}
+
+.booking-form .form-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.booking-form .form-control {
+	background-color: #f7f9fa;
+	height: 40px;
+	padding: 0px 10px;
+	border-radius: 0px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	color: #122244;
+	border: 0px;
+	font-size: 16px;
+	font-weight: 700;
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control::placeholder {
+	color: #dde3e8;
+}
+
+.booking-form .form-control:focus {
+	-webkit-box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+	box-shadow: inset 0 1px 4px rgba(181, 193, 204, 0.3);
+}
+
+.booking-form input[type="date"].form-control:invalid {
+	color: #dde3e8;
+}
+
+.booking-form select.form-control {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.booking-form select.form-control+.select-arrow {
+	position: absolute;
+	right: 0px;
+	bottom: 4px;
+	width: 32px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	pointer-events: none;
+}
+
+.booking-form select.form-control+.select-arrow:after {
+	content: '\279C';
+	display: block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	color: #dddee9;
+	font-size: 14px;
+}
+
+.booking-form .form-label {
+	color: #b5c1cc;
+	font-weight: 700;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	text-transform: uppercase;
+	line-height: 24px;
+	height: 24px;
+	font-size: 14px;
+	z-index: 1;
+}
+
+.booking-form .form-btn {
+	margin-top: 10px;
+}
+
+.booking-form .submit-btn {
+	color: #fff;
+	background-color: #6499ff;
+	font-weight: 700;
+	padding: 13px 35px;
+	font-size: 16px;
+	border: none;
+	width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+	.booking-form>.booking-bg {
+		display: none;
+	}
+	.booking-form>form {
+		margin-left: 0px;
+	}
+}
+</style>
+
+<body onload="checkbook()">
+	<div id="booking" class="section" style="margin-top: 100px; margin-bottom: 100px;">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg"></div>
+						<form>
+							<div class="form-header">
+								<h2>Your Appointment</h2>
+								<h5> (only 1 recent booking will be saved)</h5>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Name :</span>
+								<input id="name" class="form-control" type="text" placeholder="Name" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Phone Number :</span>
+								<input id="phone" class="form-control" type="text" placeholder="Phone" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Email ID :</span>
+								<input id="email" class="form-control" type="text" placeholder="Email" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Disease :</span>
+								<input id="disease" class="form-control" type="email" placeholder="Disease" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Date :</span>
+								<input id="date" class="form-control" type="email" placeholder="Date" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Area :</span>
+								<input id="area" class="form-control" type="email" placeholder="Area" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">City :</span>
+								<input id="city" class="form-control" type="email" placeholder="City" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">State :</span>
+								<input id="state" class="form-control" type="email" placeholder="State" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Pin :</span>
+								<input id="pin" class="form-control" type="email" placeholder="Pin Code" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Doctor Name :</span>
+								<input class="form-control" id="docname" placeholder="Doctor Name" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Doctor Email :</span>
+								<input class="form-control" id="docemail" placeholder="Doctor Email" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Doctor Phone :</span>
+								<input class="form-control" id="docphone" placeholder="Doctor Phone" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Hospital Name :</span>
+								<input class="form-control" id="hpname" placeholder="Hospital Name" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Hospital Address :</span>
+								<input class="form-control" id="hpaddress" placeholder="Hospital Address" disabled>
+							</div>
+							<div class="form-group">
+								<span class="form-label">Timing :</span>
+								<input class="form-control" id="app_timing" placeholder="Timing" disabled>
+							</div>
+							<br>
+							<div class="form-btn">
+								<a href="{{ url_for('home')}}" class="submit-btn" type="submit">Go to Home</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+        apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+        authDomain: "health-a-plenty.firebaseapp.com",
+        databaseURL: "https://health-a-plenty-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "health-a-plenty",
+        storageBucket: "health-a-plenty.appspot.com",
+        messagingSenderId: "495387763561",
+        appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+	//---------------------------Print Booking Details-------------------------------------//
+
+    function checkbook(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+        var user = firebase.auth().currentUser;
+		console.log(user.email);
+        if(user != null){
+    
+            var mail = user.email;
+            name1 = mail.substring(0, mail.lastIndexOf("@"));
+            firebase.database().ref('Appointments/'+name1).on('value',function(snapshot){
+            
+				document.getElementById('name').value = snapshot.val().name;
+				document.getElementById('email').value = snapshot.val().email;
+				document.getElementById('phone').value = snapshot.val().phone;
+				document.getElementById('disease').value = snapshot.val().disease;
+				document.getElementById('date').value = snapshot.val().date;
+				document.getElementById('area').value = snapshot.val().area;
+				document.getElementById('city').value = snapshot.val().city;
+				document.getElementById('state').value = snapshot.val().state;
+				document.getElementById('pin').value = snapshot.val().pincode;
+
+				document.getElementById('docname').value = snapshot.val().Doc_Name;
+				document.getElementById('docemail').value = snapshot.val().Doc_Email;
+				document.getElementById('docphone').value = snapshot.val().Doc_Phone;
+				document.getElementById('hpname').value = snapshot.val().Hosp_Name;
+				document.getElementById('hpaddress').value = snapshot.val().Hosp_add;
+				document.getElementById('app_timing').value = snapshot.val().Time;
+            
+            });
+        }
+    
+        }
+    });
+   }
+</script>
+</html>

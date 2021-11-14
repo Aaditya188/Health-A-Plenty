@@ -27,9 +27,12 @@
             <li class="nav-item active" style="padding-right: 20px;">
               <a class="btn btn-success " href="{{ url_for('home') }}">Home </a>
             </li>
-            <a target="_blank" href="http://coronavirus.app">
+            <a target="_blank" href="https://coronavirus.app" style="padding-right: 20px;">
               <button class="btn btn-success my-2 my-sm-0" type="submit">COVID-19 Live Status(with Map)</button>
           </a>
+          <a target="_blank" href="https://chrome.google.com/webstore/detail/cowin-vaccine-booking-bot/ajjahafbjfkepefpaleijlblkopkgmgh">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Vaccine Booking Bot</button>
+          </a>  
           </form>
         </div>
       </nav>
@@ -77,5 +80,22 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Firebase Config -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+        authDomain: "health-a-plenty.firebaseapp.com",
+        projectId: "health-a-plenty",
+        storageBucket: "health-a-plenty.appspot.com",
+        messagingSenderId: "495387763561",
+        appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+      };
+      firebase.initializeApp(firebaseConfig);
+ 
+  </script>
   </body>
 </html>

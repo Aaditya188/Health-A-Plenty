@@ -53,20 +53,24 @@
                                     <ul id="navigation">
                                         <li><a href="{{ url_for('home')}}">Home</a></li>
                                         <li><a href="{{ url_for('about')}}">About-Us</a></li>
-                                       <li><a style="cursor:pointer;"> Services</a>
+                                        <li><a style="cursor:pointer;"> Services</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ url_for('service')}}">Diagnosis</a></li><br>
                                                 <li><a href="{{ url_for('corona')}}">Covid Tracker</a></li><br>
+                                                <li><a href="https://nearbyhospital.herokuapp.com/">Nearby Pharmacies</a></li><br>
                                                 <li><a href="https://nearbyhospital.herokuapp.com/map">Nearby Hospital</a></li><br>
-                                                <li><a href="https://nearbyhospital.herokuapp.com/">Nearby Pharmacies</a></li>
+                                                <li><a href="{{ url_for('community')}}">Community Chat</a></li><br>
+                                                <li><a href="https://healthbuddyapp.herokuapp.com/">Doctor on Call</a></li><br>
                                             </ul>
                                         </li>
                                         <li><a href="{{ url_for('firstaid')}}">First-Aid</a></li>
-                                        <li><a href="{{ url_for('contact')}}">Contact</a></li></ul>
+                                        <li><a href="{{ url_for('contact')}}">Contact</a></li>
+                                        <li><a href="{{ url_for('viewappointment')}}">Appointments</a></li>
+                                    </ul>
                                 </nav>
                             </div>
                             <div class="header-right-btn f-right d-none d-lg-block ml-15">
-                                <a href="{{ url_for('appointmentform')}}" class="btn header-btn">Make an Appointment</a>
+                                <a href="{{ url_for('appointmentform')}}" class="btn header-btn">Make an Appointments</a>
                             </div>
                         </div>
                     </div>   
@@ -239,6 +243,25 @@
   <div id="back-top" >
     <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
 </div>
+
+<!-- Firebase Config -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase.js"></script>
+  <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyD1OWAs98vA5KO_MbmaZeZYCQHdfZ5deuE",
+        authDomain: "health-a-plenty.firebaseapp.com",
+        projectId: "health-a-plenty",
+        storageBucket: "health-a-plenty.appspot.com",
+        messagingSenderId: "495387763561",
+        appId: "1:495387763561:web:379bc47110e8dbea5653f8"
+      };
+      firebase.initializeApp(firebaseConfig);
+ 
+  </script>
+
 
 <!-- JS here -->
 
